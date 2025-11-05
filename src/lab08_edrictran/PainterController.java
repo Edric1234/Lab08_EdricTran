@@ -20,7 +20,6 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 
 public class PainterController {
-    
 
     public void initialize() {
         blackRadioButton.setUserData(Color.BLACK);
@@ -96,8 +95,14 @@ public class PainterController {
 
     @FXML
     void drawingAreaMouseDragged(MouseEvent event) {
-        Circle circle = new Circle(event.getX(), event.getY(), penSize.getRadius(), brushColor);
-        drawingAreaPane.getChildren().add(circle);
+        double x = event.getX();
+        double y = event.getY();
+
+        if (x >= 0 && x <= drawingAreaPane.getWidth()
+                && y >= 0 && y <= drawingAreaPane.getHeight()) {
+            Circle circle = new Circle(x, y, penSize.getRadius(), brushColor);
+            drawingAreaPane.getChildren().add(circle);
+        }
     }
 
     @FXML

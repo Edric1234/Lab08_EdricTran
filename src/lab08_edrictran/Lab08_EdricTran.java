@@ -11,7 +11,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- *
+ * GitHub link: https://github.com/Edric1234/Lab08_EdricTran.git
  * @author Edric
  */
 public class Lab08_EdricTran extends Application {
